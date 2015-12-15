@@ -2,7 +2,7 @@
   "Ring middleware for basic HTTP authentication."
   (:use [remvee.base64 :as base64]))
 
-(declare *user*)
+(declare ^:dynamic *user*)
 
 (defn- get-credentials [req]
   (let [auth ((req :headers) "authorization")
